@@ -33,13 +33,14 @@ def main():
                        help='Validation split ratio for training')
     parser.add_argument('--detailed_eval', action='store_true', 
                        help='Run detailed evaluation with plots')
-    
+
     args = parser.parse_args()
-    
+
+    print("Webhook test")
     print(f"Starting MLOps Pipeline - Mode: {args.mode}")
     print(f"Timestamp: {datetime.now()}")
     print("=" * 50)
-    
+
     if args.mode == 'prepare':
         run_prepare_pipeline(args)
     elif args.mode == 'train':
