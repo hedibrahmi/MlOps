@@ -36,7 +36,7 @@ def main():
 
     args = parser.parse_args()
 
-    print("Webhook test")
+    print("Webhook for fastAPI")
     print(f"Starting MLOps Pipeline - Mode: {args.mode}")
     print(f"Timestamp: {datetime.now()}")
     print("=" * 50)

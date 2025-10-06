@@ -1,16 +1,14 @@
-from flask import Flask, request
+from fastapi import FastAPI, Request
 import subprocess
 
-app = Flask(__name__)
+app = FastAPI(title="MLOps Webhook Server")
 
-@app.route("/webhook", methods=["POST"])
-def webhook():
-    data = request.json
+@app.post("/webhook")
+async def webhook(request: Request):
+    data = await request.json()
     if data and "ref" in data:
         print(f"🚀 Received push on branch {data['ref']}")
         subprocess.Popen(["make", "all"])
-        return "Pipeline triggered!", 200
-    return "No action", 200
+        return {"message": "Pipeline triggered!"}
+    return {"message": "No action"}
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)

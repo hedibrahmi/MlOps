@@ -27,6 +27,6 @@ lint:
 	flake8 main.py --format=html --htmldir=flake8-report
 
 webhook:
-	python webhook_server.py
+	uvicorn webhook_server:app --host 0.0.0.0 --port 5000
 
 all: install prepare train evaluate save lint
