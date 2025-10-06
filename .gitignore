@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+mlops_env/
+
+# Data files
+*.csv
+*.csv:Zone.Identifier
+
+# Models and outputs
+models/
+predictions.csv
+*.pkl
+*.json
+
+# Flake8 reports (optional)
+flake8-report/
+
+# OS files
+.DS_Store
+Thumbs.db
+
